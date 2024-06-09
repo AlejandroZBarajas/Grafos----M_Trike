@@ -7,8 +7,13 @@ public class Principal {
         Scanner entrada = new Scanner(System.in);
         int cantidad;
         
-        System.out.println("Indica la cantidad de vertices del grafo");
-        cantidad=validarEnteros(entrada);
+        do {
+            System.out.println("Indica la cantidad de vertices del grafo");
+            cantidad=validarEnteros(entrada);
+            if(cantidad<1){
+                System.out.println("Error");
+            }
+        } while (cantidad<1);
 
         Grafo grafo = new Grafo(cantidad);
         
@@ -19,10 +24,6 @@ public class Principal {
         grafo.agregarArista();
         grafo.imprimir();
     }
-
-
-
-
 
     private static int validarEnteros(Scanner scanner) { 
         int input;  

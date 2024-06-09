@@ -29,17 +29,33 @@ public class Grafo {
             for(int i = 0; i<listaVertices.length; i++){
                 System.out.println(i+1+")"+listaVertices[i].getNombre());
             }
-            System.out.println("Ingresa el vertice origen");
-            origen=validarEnteros(entrada);
+            
+            do {
+                System.out.println("Ingresa el vertice origen");
+                origen=validarEnteros(entrada);
+                if(origen<1){
+                    System.out.println("Error");
+                }
+            } while (origen<1);
 
-            System.out.println("Ingresa el vertice destino");
-            destino = validarEnteros(entrada);
+            do {
+                System.out.println("Ingresa el vertice destino");
+                destino = validarEnteros(entrada);
+                if(destino<1){
+                    System.out.println("Error");
+                }
+            } while (destino<1);
+
 
             matrizAdyacencia[origen-1][destino-1]=1;
 
-            System.out.println("Agregar mas aristas 1) SI \t2)NO");
-            opcion=validarEnteros(entrada);
-            
+            do {
+                System.out.println("Agregar mas aristas 1) SI \t2)NO");
+                opcion=validarEnteros(entrada);
+                if(opcion<1){
+                    System.out.println("Error");
+                }
+            } while (opcion<1);
 
         }while(opcion==1);
     }

@@ -83,4 +83,8 @@ public class Grafo {
         }
         return input; 
     }
+
+    public Vertice [] getVertices(){
+        return this.listaVertices;
+    }
 }
